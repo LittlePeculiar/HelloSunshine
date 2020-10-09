@@ -26,6 +26,12 @@ class DayVC: UIViewController {
     weak var delegate: DayVCDelegate?
     fileprivate var viewModel: DayVMContract
     
+    var city: String = "" {
+        didSet {
+            locationLabel.text = city
+        }
+    }
+    
     // MARK: Init
     init(viewModel: DayVMContract) {
         self.viewModel = viewModel
@@ -46,7 +52,7 @@ class DayVC: UIViewController {
         }
         viewModel.foundCityFromLocationClosure { [weak self] (location) in
             DispatchQueue.main.async {
-                self?.locationLabel.text = location
+                self?.city = location
             }
         }
     }

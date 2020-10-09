@@ -85,6 +85,12 @@ extension HomeVC:DayVCDelegate {
     
     func controllerDidTapLocationButton(controller: DayVC) {
         
+        let location = Location(name: dayVC.city,
+                                latitude: viewModel.weatherData.latitude,
+                                longitude: viewModel.weatherData.longitude)
+        
+        let locationVC = LocationVC(viewModel: LocationVM(withCurrent: location))
+        navigationController?.pushViewController(locationVC, animated: true)
     }
 }
 

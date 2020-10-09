@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A018D99D252F837C007ABB86 /* LocationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018D99C252F837C007ABB86 /* LocationVM.swift */; };
+		A018D9A3252F8393007ABB86 /* LocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018D9A1252F8393007ABB86 /* LocationVC.swift */; };
+		A018D9A4252F8393007ABB86 /* LocationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A018D9A2252F8393007ABB86 /* LocationVC.xib */; };
+		A018D9AF252FB305007ABB86 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018D9AE252FB305007ABB86 /* LocationCell.swift */; };
+		A018D9B4252FB31F007ABB86 /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A018D9B3252FB31F007ABB86 /* LocationCell.xib */; };
 		A0CCB142252D14C400025076 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CCB141252D14C400025076 /* AppDelegate.swift */; };
 		A0CCB14B252D14C500025076 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0CCB14A252D14C500025076 /* Assets.xcassets */; };
 		A0CCB14E252D14C500025076 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0CCB14C252D14C500025076 /* LaunchScreen.storyboard */; };
@@ -56,6 +61,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A018D99C252F837C007ABB86 /* LocationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationVM.swift; sourceTree = "<group>"; };
+		A018D9A1252F8393007ABB86 /* LocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationVC.swift; sourceTree = "<group>"; };
+		A018D9A2252F8393007ABB86 /* LocationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationVC.xib; sourceTree = "<group>"; };
+		A018D9AE252FB305007ABB86 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		A018D9B3252FB31F007ABB86 /* LocationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationCell.xib; sourceTree = "<group>"; };
 		A0CCB13E252D14C400025076 /* HelloSunshine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloSunshine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0CCB141252D14C400025076 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0CCB14A252D14C500025076 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -145,11 +155,11 @@
 				A0CCB193252D1A6A00025076 /* Models */,
 				A0CCB192252D1A5D00025076 /* Extensions */,
 				A0CCB191252D1A5300025076 /* Service */,
+				A0CCB178252D175E00025076 /* Home */,
 				A0CCB17C252D184200025076 /* WeekView */,
 				A0CCB17B252D183700025076 /* DayView */,
 				A0CCB17A252D17FE00025076 /* Location */,
 				A0CCB179252D17F600025076 /* Settings */,
-				A0CCB178252D175E00025076 /* Home */,
 				A0CCB177252D16E200025076 /* Main */,
 			);
 			path = HelloSunshine;
@@ -204,6 +214,11 @@
 		A0CCB17A252D17FE00025076 /* Location */ = {
 			isa = PBXGroup;
 			children = (
+				A018D99C252F837C007ABB86 /* LocationVM.swift */,
+				A018D9A1252F8393007ABB86 /* LocationVC.swift */,
+				A018D9A2252F8393007ABB86 /* LocationVC.xib */,
+				A018D9AE252FB305007ABB86 /* LocationCell.swift */,
+				A018D9B3252FB31F007ABB86 /* LocationCell.xib */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -376,10 +391,12 @@
 			files = (
 				A0CCB197252D1A9100025076 /* WeekVC.xib in Resources */,
 				A0CCB1AB252D1ABF00025076 /* DayVC.xib in Resources */,
+				A018D9B4252FB31F007ABB86 /* LocationCell.xib in Resources */,
 				A0CCB14E252D14C500025076 /* LaunchScreen.storyboard in Resources */,
 				A0CCB200252E92D700025076 /* WeekCell.xib in Resources */,
 				A0CCB188252D1A0800025076 /* HomeVC.xib in Resources */,
 				A0CCB14B252D14C500025076 /* Assets.xcassets in Resources */,
+				A018D9A4252F8393007ABB86 /* LocationVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,7 +427,9 @@
 				A0CCB1ED252E77D100025076 /* GMUserDefaults.swift in Sources */,
 				A0CCB187252D1A0700025076 /* HomeVC.swift in Sources */,
 				A0CCB196252D1A9100025076 /* WeekVC.swift in Sources */,
+				A018D9AF252FB305007ABB86 /* LocationCell.swift in Sources */,
 				A0CCB19F252D1AA000025076 /* WeekVM.swift in Sources */,
+				A018D9A3252F8393007ABB86 /* LocationVC.swift in Sources */,
 				A0CCB205252E97DF00025076 /* Utils.swift in Sources */,
 				A0CCB1D9252D47B100025076 /* Enums.swift in Sources */,
 				A0CCB1B0252D1B1300025076 /* Location.swift in Sources */,
@@ -419,6 +438,7 @@
 				A0CCB1F2252E799300025076 /* GMDouble.swift in Sources */,
 				A0CCB1E3252D608F00025076 /* Spinner.swift in Sources */,
 				A0CCB1CA252D1FB900025076 /* Config.swift in Sources */,
+				A018D99D252F837C007ABB86 /* LocationVM.swift in Sources */,
 				A0CCB1B8252D1B2A00025076 /* WeatherData.swift in Sources */,
 				A0CCB1BD252D1B3B00025076 /* WeatherDayData.swift in Sources */,
 				A0CCB1AA252D1ABF00025076 /* DayVC.swift in Sources */,

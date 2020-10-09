@@ -21,6 +21,24 @@ enum TemperatureNotation: Int {
     case celsius
 }
 
+enum LocationTableSection: Int, CaseIterable {
+
+    case current
+    case favorite
+    case recent
+
+    // MARK: - Properties
+
+    var title: String {
+        switch self {
+        case .current: return "Current Location"
+        case .favorite: return "Favorite Locations"
+        case .recent: return "Recent Locations"
+        }
+    }
+
+}
+
 enum AlertType {
     
     case notAuthorizedToRequestLocation

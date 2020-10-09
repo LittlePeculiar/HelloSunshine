@@ -52,7 +52,12 @@ extension Location {
         self.latitude = latitude
         self.longitude = longitude
     }
-
+    
+    init() {
+        self.name = ""
+        self.latitude = 0
+        self.longitude = 0
+    }
 }
 
 extension Location: Equatable {
