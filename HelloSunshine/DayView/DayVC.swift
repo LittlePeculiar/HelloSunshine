@@ -63,11 +63,11 @@ class DayVC: UIViewController {
     
     private func setupUI() {
         
-        dateLabel.text = viewModel.weatherData.dateLabelText
-        timeLabel.text = viewModel.weatherData.timeLabelText
-        descriptionLabel.text = viewModel.weatherData.summary
-        temperatureLabel.text = viewModel.weatherData.temperatureLabelText
-        windSpeedLabel.text = viewModel.weatherData.windSpeedLabelText
+        dateLabel.text = viewModel.dateLabelText
+        timeLabel.text = viewModel.timeLabelText
+        descriptionLabel.text = viewModel.summaryLabelText
+        temperatureLabel.text = viewModel.temperatureLabelText
+        windSpeedLabel.text = viewModel.windSpeedLabelText
         iconImageView.image = Utils.shared.imageForIcon(withName: viewModel.weatherData.icon)
     }
 

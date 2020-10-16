@@ -32,9 +32,11 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       setupUI()
+
         viewModel.didChangeLocationClosure { [weak self] in
             DispatchQueue.main.async {
+                self?.setupUI()
+
                 if let weatherData = self?.viewModel.weatherData {
                     self?.dayVC.update(weatherData: weatherData)
                 }
