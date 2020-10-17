@@ -50,7 +50,11 @@ class API: APIContract {
             completion(.failure(.invalidResponseCode))
             return
         }
-        guard let weatherData = try? JSONDecoder().decode(WeatherData.self, from: postData) else {
+
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .secondsSince1970
+
+        guard let weatherData = try? decoder.decode(WeatherData.self, from: postData) else {
             completion(.failure(.serializationError))
             return
         }

@@ -12,6 +12,11 @@
 		A018D9A4252F8393007ABB86 /* LocationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A018D9A2252F8393007ABB86 /* LocationVC.xib */; };
 		A018D9AF252FB305007ABB86 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018D9AE252FB305007ABB86 /* LocationCell.swift */; };
 		A018D9B4252FB31F007ABB86 /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A018D9B3252FB31F007ABB86 /* LocationCell.xib */; };
+		A0724295253A619400499575 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0724293253A619400499575 /* SettingsVC.swift */; };
+		A0724296253A619400499575 /* SettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0724294253A619400499575 /* SettingsVC.xib */; };
+		A072429E253A61A700499575 /* SettingsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A072429D253A61A700499575 /* SettingsVM.swift */; };
+		A07242A5253A63B400499575 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07242A3253A63B400499575 /* SettingsCell.swift */; };
+		A07242A6253A63B400499575 /* SettingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A07242A4253A63B400499575 /* SettingsCell.xib */; };
 		A0CCB142252D14C400025076 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CCB141252D14C400025076 /* AppDelegate.swift */; };
 		A0CCB14B252D14C500025076 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0CCB14A252D14C500025076 /* Assets.xcassets */; };
 		A0CCB14E252D14C500025076 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0CCB14C252D14C500025076 /* LaunchScreen.storyboard */; };
@@ -66,6 +71,11 @@
 		A018D9A2252F8393007ABB86 /* LocationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationVC.xib; sourceTree = "<group>"; };
 		A018D9AE252FB305007ABB86 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		A018D9B3252FB31F007ABB86 /* LocationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationCell.xib; sourceTree = "<group>"; };
+		A0724293253A619400499575 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		A0724294253A619400499575 /* SettingsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsVC.xib; sourceTree = "<group>"; };
+		A072429D253A61A700499575 /* SettingsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVM.swift; sourceTree = "<group>"; };
+		A07242A3253A63B400499575 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		A07242A4253A63B400499575 /* SettingsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsCell.xib; sourceTree = "<group>"; };
 		A0CCB13E252D14C400025076 /* HelloSunshine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloSunshine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0CCB141252D14C400025076 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0CCB14A252D14C500025076 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -128,6 +138,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A0724292253A617300499575 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A0724293253A619400499575 /* SettingsVC.swift */,
+				A0724294253A619400499575 /* SettingsVC.xib */,
+				A072429D253A61A700499575 /* SettingsVM.swift */,
+				A07242A3253A63B400499575 /* SettingsCell.swift */,
+				A07242A4253A63B400499575 /* SettingsCell.xib */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		A0CCB135252D14C400025076 = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +173,7 @@
 		A0CCB140252D14C400025076 /* HelloSunshine */ = {
 			isa = PBXGroup;
 			children = (
+				A0724292253A617300499575 /* Settings */,
 				A0CCB1D7252D478500025076 /* Helpers */,
 				A0CCB193252D1A6A00025076 /* Models */,
 				A0CCB192252D1A5D00025076 /* Extensions */,
@@ -159,7 +182,6 @@
 				A0CCB17C252D184200025076 /* WeekView */,
 				A0CCB17B252D183700025076 /* DayView */,
 				A0CCB17A252D17FE00025076 /* Location */,
-				A0CCB179252D17F600025076 /* Settings */,
 				A0CCB177252D16E200025076 /* Main */,
 			);
 			path = HelloSunshine;
@@ -202,13 +224,6 @@
 				A0CCB186252D1A0700025076 /* HomeVC.xib */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		A0CCB179252D17F600025076 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Settings;
 			sourceTree = "<group>";
 		};
 		A0CCB17A252D17FE00025076 /* Location */ = {
@@ -393,8 +408,10 @@
 				A0CCB1AB252D1ABF00025076 /* DayVC.xib in Resources */,
 				A018D9B4252FB31F007ABB86 /* LocationCell.xib in Resources */,
 				A0CCB14E252D14C500025076 /* LaunchScreen.storyboard in Resources */,
+				A07242A6253A63B400499575 /* SettingsCell.xib in Resources */,
 				A0CCB200252E92D700025076 /* WeekCell.xib in Resources */,
 				A0CCB188252D1A0800025076 /* HomeVC.xib in Resources */,
+				A0724296253A619400499575 /* SettingsVC.xib in Resources */,
 				A0CCB14B252D14C500025076 /* Assets.xcassets in Resources */,
 				A018D9A4252F8393007ABB86 /* LocationVC.xib in Resources */,
 			);
@@ -430,7 +447,9 @@
 				A018D9AF252FB305007ABB86 /* LocationCell.swift in Sources */,
 				A0CCB19F252D1AA000025076 /* WeekVM.swift in Sources */,
 				A018D9A3252F8393007ABB86 /* LocationVC.swift in Sources */,
+				A0724295253A619400499575 /* SettingsVC.swift in Sources */,
 				A0CCB205252E97DF00025076 /* Utils.swift in Sources */,
+				A072429E253A61A700499575 /* SettingsVM.swift in Sources */,
 				A0CCB1D9252D47B100025076 /* Enums.swift in Sources */,
 				A0CCB1B0252D1B1300025076 /* Location.swift in Sources */,
 				A0CCB142252D14C400025076 /* AppDelegate.swift in Sources */,
@@ -439,6 +458,7 @@
 				A0CCB1E3252D608F00025076 /* Spinner.swift in Sources */,
 				A0CCB1CA252D1FB900025076 /* Config.swift in Sources */,
 				A018D99D252F837C007ABB86 /* LocationVM.swift in Sources */,
+				A07242A5253A63B400499575 /* SettingsCell.swift in Sources */,
 				A0CCB1B8252D1B2A00025076 /* WeatherData.swift in Sources */,
 				A0CCB1BD252D1B3B00025076 /* WeatherDayData.swift in Sources */,
 				A0CCB1AA252D1ABF00025076 /* DayVC.swift in Sources */,

@@ -36,7 +36,6 @@ enum LocationTableSection: Int, CaseIterable {
         case .recent: return "Recent Locations"
         }
     }
-
 }
 
 enum AlertType {

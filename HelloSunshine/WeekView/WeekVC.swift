@@ -70,14 +70,14 @@ class WeekVC: UIViewController {
 
 extension WeekVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.dailyData.count
+        return viewModel.numberOfDays
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
             let cell = tableView.dequeueReusableCell(withIdentifier: WeekCell.reuseIdentifier, for: indexPath) as? WeekCell, indexPath.row < viewModel.dailyData.count else { return UITableViewCell() }
                 
-        let data = viewModel.dailyData[indexPath.row]
+        let data = viewModel.weatherDayData(forIndex: indexPath.row)
         cell.configure(with: data)
         return cell
     }

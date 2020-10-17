@@ -18,6 +18,7 @@ class HomeVC: UIViewController {
     fileprivate var viewModel: HomeVMContract
     fileprivate var dayVC: DayVC!
     fileprivate var weekVC: WeekVC!
+    fileprivate var setupComplete: Bool = false
     
     // MARK: Init
     init(viewModel: HomeVMContract) {
@@ -35,13 +36,11 @@ class HomeVC: UIViewController {
 
         viewModel.didChangeLocationClosure { [weak self] in
             DispatchQueue.main.async {
-                self?.setupUI()
-
-                if let weatherData = self?.viewModel.weatherData {
-                    self?.dayVC.update(weatherData: weatherData)
-                }
-                if let dailyData = self?.viewModel.weatherData.dailyData {
-                    self?.weekVC.update(dailyData: dailyData)
+                if self?.setupComplete == false {
+                    self?.setupUI()
+                    self?.setupComplete = true
+                } else {
+                    self?.updateUI()
                 }
             }
         }
@@ -64,6 +63,11 @@ class HomeVC: UIViewController {
         weekVC.delegate = self
         self.embed(viewController: weekVC, inView: weekContainerView)
     }
+
+    private func updateUI() {
+        dayVC.update(weatherData: viewModel.weatherData)
+        weekVC.update(dailyData: viewModel.weatherData.dailyData)
+    }
     
     private func presentAlert(of alertType: AlertType) {
         
@@ -82,7 +86,9 @@ class HomeVC: UIViewController {
 
 extension HomeVC:DayVCDelegate {
     func controllerDidTapSettingsButton(controller: DayVC) {
-        
+        let settingsVC = SettingsVC(viewModel: SettingsVM())
+        settingsVC.delegate = self
+        navigationController?.pushViewController(settingsVC, animated: true)
     }
     
     func controllerDidTapLocationButton(controller: DayVC) {
@@ -99,5 +105,11 @@ extension HomeVC:DayVCDelegate {
 extension HomeVC: WeekVCDelegate {
     func controllerDidRefresh(controller: WeekVC) {
         
+    }
+}
+
+extension HomeVC: SettingsVCDelegate {
+    func settingsDidChangeNotation(controller: SettingsVC) {
+        updateUI()
     }
 }

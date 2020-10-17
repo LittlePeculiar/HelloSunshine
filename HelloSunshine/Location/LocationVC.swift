@@ -94,7 +94,7 @@ extension LocationVC: UITableViewDataSource {
         if let newLocation = location {
             cell.configure(withLocation: newLocation)
         } else {
-            cell.nameLabel.text = viewModel.noRecordsFount(forSection: section)
+            cell.nameLabel.text = viewModel.noRecordsFound(forSection: section)
         }
         
         return cell

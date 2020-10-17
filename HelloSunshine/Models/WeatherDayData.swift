@@ -34,23 +34,21 @@ struct WeatherDayData: Decodable {
     
     public var temperatureLabelText: String {
 
-        var min = temperatureMin
-        var max = temperatureMax
-        if UserDefaults.temperatureNotation != .fahrenheit {
-            min = temperatureMin.toCelcius
-            max = temperatureMax.toCelcius
-        }
-        let minStr = String(format: "%.0f°", min)
-        let maxStr = String(format: "%.0f°", max)
+        let isFahrenheit = UserDefaults.temperatureNotation == .fahrenheit
+        let min = isFahrenheit ? temperatureMin : temperatureMin.toCelcius
+        let max = isFahrenheit ? temperatureMax : temperatureMax.toCelcius
+        let format = isFahrenheit ? "%.1f °F" : "%.1f °C"
+        
+        let minStr = String(format: format, min)
+        let maxStr = String(format: format, max)
         return "\(minStr) - \(maxStr)"
     }
     
     public var windSpeedLabelText: String {
-        if UserDefaults.unitsNotation != .imperial {
-            return String(format: "%.f KPH", windSpeed.toKPH)
-        } else {
-            return String(format: "%.f MPH", windSpeed)
-        }
+        let isImperial = UserDefaults.unitsNotation == .imperial
+        let speed = isImperial ? windSpeed : windSpeed.toKPH
+        let format = isImperial ? "%.f MPH" : "%.f KPH"
+        return String(format: format, speed)
     }
 }
 

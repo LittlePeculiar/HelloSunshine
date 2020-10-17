@@ -24,7 +24,7 @@ protocol LocationVMContract {
     func numberOfRows(forSection section: Int) -> Int
     func canEdit(section: Int) -> Bool
     func remove(location: Location, forSection section: LocationTableSection)
-    func noRecordsFount(forSection section: LocationTableSection) -> String
+    func noRecordsFound(forSection section: LocationTableSection) -> String
 }
 
 class LocationVM: LocationVMContract {
@@ -90,7 +90,7 @@ class LocationVM: LocationVMContract {
         return locationSection.title
     }
     
-    func noRecordsFount(forSection section: LocationTableSection) -> String {
+    func noRecordsFound(forSection section: LocationTableSection) -> String {
         switch section {
             case .favorite: return "No Favorites Found"
             case .recent: return "No Recents Found"
