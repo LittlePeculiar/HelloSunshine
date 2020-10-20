@@ -13,6 +13,11 @@
 		A018D9AF252FB305007ABB86 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018D9AE252FB305007ABB86 /* LocationCell.swift */; };
 		A018D9B4252FB31F007ABB86 /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A018D9B3252FB31F007ABB86 /* LocationCell.xib */; };
 		A05EAF2D253E5E8300B43FEC /* WeekDayDataVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05EAF2C253E5E8300B43FEC /* WeekDayDataVM.swift */; };
+		A05EAF4B253E69F500B43FEC /* SettingsVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05EAF4A253E69F500B43FEC /* SettingsVMTests.swift */; };
+		A05EAF51253F5E7500B43FEC /* weather.json in Resources */ = {isa = PBXBuildFile; fileRef = A05EAF50253F5E7500B43FEC /* weather.json */; };
+		A05EAF59253F5E9C00B43FEC /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05EAF58253F5E9C00B43FEC /* XCTestCase.swift */; };
+		A05EAF5E253F600E00B43FEC /* DayVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05EAF5D253F600E00B43FEC /* DayVMTests.swift */; };
+		A05EAF63253F827600B43FEC /* WeekVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05EAF62253F827600B43FEC /* WeekVMTests.swift */; };
 		A0724295253A619400499575 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0724293253A619400499575 /* SettingsVC.swift */; };
 		A0724296253A619400499575 /* SettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0724294253A619400499575 /* SettingsVC.xib */; };
 		A072429E253A61A700499575 /* SettingsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A072429D253A61A700499575 /* SettingsVM.swift */; };
@@ -73,6 +78,11 @@
 		A018D9AE252FB305007ABB86 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		A018D9B3252FB31F007ABB86 /* LocationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationCell.xib; sourceTree = "<group>"; };
 		A05EAF2C253E5E8300B43FEC /* WeekDayDataVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayDataVM.swift; sourceTree = "<group>"; };
+		A05EAF4A253E69F500B43FEC /* SettingsVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVMTests.swift; sourceTree = "<group>"; };
+		A05EAF50253F5E7500B43FEC /* weather.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weather.json; sourceTree = "<group>"; };
+		A05EAF58253F5E9C00B43FEC /* XCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
+		A05EAF5D253F600E00B43FEC /* DayVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayVMTests.swift; sourceTree = "<group>"; };
+		A05EAF62253F827600B43FEC /* WeekVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekVMTests.swift; sourceTree = "<group>"; };
 		A0724293253A619400499575 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		A0724294253A619400499575 /* SettingsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsVC.xib; sourceTree = "<group>"; };
 		A072429D253A61A700499575 /* SettingsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVM.swift; sourceTree = "<group>"; };
@@ -140,6 +150,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A05EAF43253E682700B43FEC /* TestCases */ = {
+			isa = PBXGroup;
+			children = (
+				A05EAF4A253E69F500B43FEC /* SettingsVMTests.swift */,
+				A05EAF5D253F600E00B43FEC /* DayVMTests.swift */,
+				A05EAF62253F827600B43FEC /* WeekVMTests.swift */,
+			);
+			path = TestCases;
+			sourceTree = "<group>";
+		};
+		A05EAF44253E682700B43FEC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A05EAF45253E682700B43FEC /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
+		A05EAF46253E683200B43FEC /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				A0CCB15A252D14C500025076 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		A05EAF4F253F5E5100B43FEC /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				A05EAF50253F5E7500B43FEC /* weather.json */,
+				A05EAF58253F5E9C00B43FEC /* XCTestCase.swift */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
 		A0724292253A617300499575 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,8 +243,12 @@
 		A0CCB157252D14C500025076 /* HelloSunshineTests */ = {
 			isa = PBXGroup;
 			children = (
+				A05EAF4F253F5E5100B43FEC /* JSON */,
+				A05EAF44253E682700B43FEC /* Extensions */,
+				A05EAF45253E682700B43FEC /* Stubs */,
+				A05EAF43253E682700B43FEC /* TestCases */,
 				A0CCB158252D14C500025076 /* HelloSunshineTests.swift */,
-				A0CCB15A252D14C500025076 /* Info.plist */,
+				A05EAF46253E683200B43FEC /* SupportingFiles */,
 			);
 			path = HelloSunshineTests;
 			sourceTree = "<group>";
@@ -424,6 +479,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A05EAF51253F5E7500B43FEC /* weather.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +533,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0CCB159252D14C500025076 /* HelloSunshineTests.swift in Sources */,
+				A05EAF59253F5E9C00B43FEC /* XCTestCase.swift in Sources */,
+				A05EAF63253F827600B43FEC /* WeekVMTests.swift in Sources */,
+				A05EAF4B253E69F500B43FEC /* SettingsVMTests.swift in Sources */,
+				A05EAF5E253F600E00B43FEC /* DayVMTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,7 +736,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68S363QCVZ;
-				INFOPLIST_FILE = HelloSunshineTests/Info.plist;
+				INFOPLIST_FILE = HelloSunshineTests/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -698,7 +758,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68S363QCVZ;
-				INFOPLIST_FILE = HelloSunshineTests/Info.plist;
+				INFOPLIST_FILE = HelloSunshineTests/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
