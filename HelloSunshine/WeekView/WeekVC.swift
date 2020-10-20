@@ -79,9 +79,8 @@ extension WeekVC: UITableViewDelegate, UITableViewDataSource {
         guard
             let cell = tableView.dequeueReusableCell(withIdentifier: WeekCell.reuseIdentifier, for: indexPath) as? WeekCell, indexPath.row < viewModel.dailyData.count else { return UITableViewCell() }
                 
-        let data = viewModel.weatherDayData(forIndex: indexPath.row)
-        let dayData = WeekDayDataVM(with: data)
-        cell.configure(with: dayData)
+        let data = viewModel.weekDayData(forIndex: indexPath.row)
+        cell.configure(with: data)
         return cell
     }
 }

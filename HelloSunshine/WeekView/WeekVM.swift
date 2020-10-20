@@ -13,7 +13,7 @@ protocol WeekVMContract {
     var numberOfDays: Int { get }
     
     func didChangeWeekDataClosure(callback: @escaping () -> Void)
-    func weatherDayData(forIndex index: Int) -> WeatherDayData
+    func weekDayData(forIndex index: Int) -> WeekDayDataVM
 }
 
 class WeekVM: WeekVMContract {
@@ -32,7 +32,9 @@ class WeekVM: WeekVMContract {
     func didChangeWeekDataClosure(callback: @escaping () -> Void) {
         weekWeatherDataDidChange = callback
     }
-    func weatherDayData(forIndex index: Int) -> WeatherDayData {
-        return dailyData[index]
+
+    func weekDayData(forIndex index: Int) -> WeekDayDataVM {
+        let weatherDayData = dailyData[index]
+        return WeekDayDataVM(with: weatherDayData)
     }
 }
