@@ -45,7 +45,8 @@ class DayVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        viewModel.didChangeDataClosure { [weak self] in
+        // set the closure in VM
+        viewModel.didChangeDayDataClosure { [weak self] in
             DispatchQueue.main.async {
                 self?.setupUI()
             }

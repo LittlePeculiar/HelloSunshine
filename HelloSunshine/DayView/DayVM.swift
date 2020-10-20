@@ -18,7 +18,7 @@ protocol DayVMContract {
     var windSpeedLabelText: String { get }
     var summaryLabelText: String { get }
     
-    func didChangeDataClosure(callback: @escaping () -> Void)
+    func didChangeDayDataClosure(callback: @escaping () -> Void)
     func foundCityFromLocationClosure(callback: @escaping (String) -> Void)
 }
 
@@ -26,7 +26,7 @@ class DayVM: DayVMContract {
 
     // MARK: Private Properties
 
-    private var weatherDataDidChange: (() -> Void)?
+    private var dayWeatherDataDidChange: (() -> Void)?
     private var foundCity: ((String) -> Void)?
     private let dateFormatter = DateFormatter()
 
@@ -35,7 +35,9 @@ class DayVM: DayVMContract {
     public var isLoading: Bool = false
     public var weatherData: WeatherData = WeatherData() {
         didSet {
-            weatherDataDidChange?()
+            // bug: weatherData is being set before closure - VC not getting called
+            // fix: init with empty and set weatherData in update
+            dayWeatherDataDidChange?()
             fetchCity()
         }
     }
@@ -73,8 +75,8 @@ class DayVM: DayVMContract {
     
     // MARK: Public Methods
         
-    func didChangeDataClosure(callback: @escaping () -> Void) {
-        weatherDataDidChange = callback
+    func didChangeDayDataClosure(callback: @escaping () -> Void) {
+        dayWeatherDataDidChange = callback
     }
     
     func foundCityFromLocationClosure(callback: @escaping (String) -> Void) {
@@ -89,12 +91,6 @@ class DayVM: DayVMContract {
             let found = city + ", " + country
             self?.foundCity?(found)
         }
-    }
-    
-    
-    // MARK: Init
-    init(data: WeatherData) {
-        self.weatherData = data
     }
 }
 

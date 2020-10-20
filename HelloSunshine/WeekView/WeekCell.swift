@@ -29,12 +29,12 @@ class WeekCell: UITableViewCell {
         iconImageView.image = nil
     }
 
-    func configure(with data: WeatherDayData) {
+    func configure(with data: WeekDayDataVM) {
         dayLabel.text = data.dayLabelText
         dateLabel.text = data.dateLabelText
         windSpeedLabel.text = data.windSpeedLabelText
         temperatureLabel.text = data.temperatureLabelText
-        iconImageView.image = Utils.shared.imageForIcon(withName: data.icon)
+        iconImageView.image = Utils.shared.imageForIcon(withName: data.weatherIconName)
     }
     
 }

@@ -33,7 +33,9 @@ class WeekVC: UIViewController {
         super.viewDidLoad()
 
         setupUI()
-        viewModel.didChangeDataClosure { [weak self] in
+
+        // set the closure in VM
+        viewModel.didChangeWeekDataClosure { [weak self] in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
                 self?.spinner.stopAnimating()
@@ -78,7 +80,8 @@ extension WeekVC: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: WeekCell.reuseIdentifier, for: indexPath) as? WeekCell, indexPath.row < viewModel.dailyData.count else { return UITableViewCell() }
                 
         let data = viewModel.weatherDayData(forIndex: indexPath.row)
-        cell.configure(with: data)
+        let dayData = WeekDayDataVM(with: data)
+        cell.configure(with: dayData)
         return cell
     }
 }

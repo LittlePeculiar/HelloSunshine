@@ -12,32 +12,27 @@ protocol WeekVMContract {
     var dailyData: [WeatherDayData] { get set }
     var numberOfDays: Int { get }
     
-    func didChangeDataClosure(callback: @escaping () -> Void)
+    func didChangeWeekDataClosure(callback: @escaping () -> Void)
     func weatherDayData(forIndex index: Int) -> WeatherDayData
 }
 
 class WeekVM: WeekVMContract {
+    private var weekWeatherDataDidChange: (() -> Void)?
+    
     public var isLoading: Bool = false
     public var dailyData: [WeatherDayData] = [] {
         didSet {
-            weatherDataDidChange?()
+            weekWeatherDataDidChange?()
         }
     }
     public var numberOfDays: Int {
         dailyData.count
     }
     
-    func didChangeDataClosure(callback: @escaping () -> Void) {
-        weatherDataDidChange = callback
+    func didChangeWeekDataClosure(callback: @escaping () -> Void) {
+        weekWeatherDataDidChange = callback
     }
     func weatherDayData(forIndex index: Int) -> WeatherDayData {
         return dailyData[index]
-    }
-    
-    private var weatherDataDidChange: (() -> Void)?
-    
-    // MARK: Init
-    init(data: [WeatherDayData]) {
-        self.dailyData = data
     }
 }

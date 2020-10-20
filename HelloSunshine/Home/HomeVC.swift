@@ -55,13 +55,15 @@ class HomeVC: UIViewController {
     private func setupUI() {
         self.title = viewModel.title
         
-        dayVC = DayVC(viewModel: DayVM(data: viewModel.weatherData))
+        dayVC = DayVC(viewModel: DayVM())
         dayVC.delegate = self
         self.embed(viewController: dayVC, inView: dayContainerView)
+        dayVC.update(weatherData: viewModel.weatherData)
         
-        weekVC = WeekVC(viewModel: WeekVM(data: viewModel.weatherData.dailyData))
+        weekVC = WeekVC(viewModel: WeekVM())
         weekVC.delegate = self
         self.embed(viewController: weekVC, inView: weekContainerView)
+        weekVC.update(dailyData: viewModel.weatherData.dailyData)
     }
 
     private func updateUI() {

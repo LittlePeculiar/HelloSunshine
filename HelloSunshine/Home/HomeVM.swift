@@ -29,13 +29,13 @@ class HomeVM: HomeVMContract {
     }
     public var weatherData: WeatherData = WeatherData() {
         didSet {
-            weatherDataDidChange?()
+            homeWeatherDataDidChange?()
         }
     }
     
     // MARK: Private
     
-    private var weatherDataDidChange: (() -> Void)?
+    private var homeWeatherDataDidChange: (() -> Void)?
     private var weatherDataDidFail: ((AlertType) -> Void)?
     private var api: APIContract = API()
     private let locationService = LocationService.shared
@@ -48,7 +48,7 @@ class HomeVM: HomeVMContract {
     // MARK: Public Methods
         
     func didChangeLocationClosure(callback: @escaping () -> Void) {
-        weatherDataDidChange = callback
+        homeWeatherDataDidChange = callback
     }
     
     func didFailLocationClosure(callback: @escaping (AlertType) -> Void) {
